@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { Button, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native';
+import { Button, Text, TextInput, Touchable, TouchableOpacity, View, StyleSheet } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CreatePostScreen from './components/CreatePostScreen';
 import ViewAssignmentScreen from './components/ViewAssignmentScreen';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -53,9 +54,11 @@ function HjemScreen({navigation,route}){
   }, [route.params?.post]);
   //"skriv kommentar"
   return (
-    <View style={{flex:1, alignItems:'center', justifyContent:'center'}} >
+    <View style={{flex:1, alignItems: 'flex-start', justifyContent:'flex-start'}} >
      <View>
-      <TouchableOpacity onPress={()=> navigation.navigate('Opgave')}>
+      <TouchableOpacity
+      style={styles.assignmentButton}
+       onPress={()=> navigation.navigate('Opgave')}>
       <Text>Dagens opgave</Text>
       </TouchableOpacity>
      </View>
@@ -158,3 +161,15 @@ export default function App() {
 //     justifyContent: 'center',
 //   },
 // });
+
+//test - styling af opgave touchable
+const styles= StyleSheet.create({
+  assignmentButton:{
+    backgroundColor: '#01553D',
+    width:392,
+    height:40,
+    borderRadius:5,
+    paddingTop: 15,
+    paddingLeft:5
+  }
+});
