@@ -18,9 +18,9 @@ const [data, setData]= useState([]);
 const getAssignments = async () => {
     try{
         const response = await
-        fetch('https://reactnative.dev/movies.json');
+        fetch('https://mocki.io/v1/847f6a9a-4eb4-4d2b-be82-599014b729a1');
         const json = await response.json();
-        setData(json.movies);
+        setData(json.assignments);
     }catch(error) {
         console.error(error);
     } finally {
@@ -41,7 +41,7 @@ return(
     keyExtractor={({id}) => id }
     renderItem={({item})=> (
         <Text>
-            {item.title}, {item.releaseYear}
+            {item.title}, {item.address}
         </Text>
     )}  
     />
