@@ -4,6 +4,7 @@ import { Button, Text, TextInput, Touchable, TouchableOpacity, View, StyleSheet 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CreatePostScreen from './components/CreatePostScreen';
 import ViewAssignmentScreen from './components/ViewAssignmentScreen';
+import CalendarScreen from './components/CalendarScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -69,6 +70,9 @@ function HjemScreen({navigation,route}){
       <Text style={{margin:10}} >
 Kommentar: {route.params?.post}
       </Text>
+      <Button title="Kalender"
+      onPress={()=> navigation.navigate('Calendar')} >
+        </Button>
     </View>
   );
 }
@@ -108,6 +112,7 @@ export default function App() {
     {/* <Stack.Screen name='Details' component={DetailsScreen}/> */}
     <Stack.Screen name='Kommentar' component={CreatePostScreen}/>
     <Stack.Screen name='Opgave' component={ViewAssignmentScreen}/>
+    <Stack.Screen name='Calendar' component={CalendarScreen} />
   </Stack.Navigator>
 </NavigationContainer>
   );
