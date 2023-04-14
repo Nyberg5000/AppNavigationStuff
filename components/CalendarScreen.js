@@ -3,7 +3,7 @@ import {View, StyleSheet} from 'react-native';
 
   //skriv show assignment i terminal når man trykker på et tal i kalender - virker ikke
 const onPressHandler = () => {
-    console.log("Show assignment");
+    console.log("Show today assignment");
 };
 
 const CalendarScreen = () => (
@@ -21,8 +21,8 @@ iconContainer={{flex:0.1}}
     </View>
 );
 
-export default CalendarScreen;
 
 const styles = StyleSheet.create({
     container: {flex:1}
 });
+export default CalendarScreen;
