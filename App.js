@@ -99,7 +99,7 @@ Kommentar: {route.params?.post}
 // }
 
 
-//"Denne kodebid går igen for de forskellige navigations"
+//"Denne kode går igen for de forskellige navigations"
 export default function App() {
   return (
 <NavigationContainer>
