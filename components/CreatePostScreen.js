@@ -7,7 +7,7 @@ function CreatePostScreen({navigation,route}){
     return(
       <>
      <TextInput multiline placeholder='Skriv en kommentar'
-     style={{height:200, padding:10, backgroundColor:'blue'}}
+     style={{height:200, padding:10, backgroundColor:'blue', color:'white', fontSize:20}}
      value={postText}
      onChangeText={setPostText}
      ></TextInput>
