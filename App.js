@@ -1,9 +1,11 @@
 import * as React from 'react';
+import MapView from 'react-native-maps';
 import { NavigationContainer } from '@react-navigation/native';
 import { Button, Text, TextInput, Touchable, TouchableOpacity, View, StyleSheet } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CreatePostScreen from './components/CreatePostScreen';
 import ViewAssignmentScreen from './components/ViewAssignmentScreen';
+//import MapScreen from './components/MapScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -69,6 +71,12 @@ function HjemScreen({navigation,route}){
       <Text style={{margin:10}} >
 Kommentar: {route.params?.post}
       </Text>
+      {/* <Button title="Rutevejledning"
+      onPress={()=> navigation.navigate('Rutevejledning') } >
+      </Button> */}
+       <View style={styles.container}>
+      <MapView style={styles.map} />
+    </View>
     </View>
   );
 }
@@ -108,6 +116,7 @@ export default function App() {
     {/* <Stack.Screen name='Details' component={DetailsScreen}/> */}
     <Stack.Screen name='Kommentar' component={CreatePostScreen}/>
     <Stack.Screen name='Opgave' component={ViewAssignmentScreen}/>
+    {/* <Stack.Screen name='Rutevejledning' component={MapScreen}/> */}
   </Stack.Navigator>
 </NavigationContainer>
   );
@@ -171,5 +180,12 @@ const styles= StyleSheet.create({
     borderRadius:5,
     paddingTop: 15,
     paddingLeft:5
-  }
+  },
+  container: {
+    flex: 1,
+  },
+  map: {
+    width: '100%',
+    height: '100%',
+},
 });
